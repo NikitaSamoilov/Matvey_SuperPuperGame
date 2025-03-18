@@ -1,5 +1,6 @@
 package org.example.util;
 
+import org.example.model.User;
 import java.util.Scanner;
 
 public class GameHelper {
@@ -26,15 +27,29 @@ public class GameHelper {
         return false;
     }
 
-    public boolean processIntValue(int successNumb, int numb) {
+    public boolean processIntValue(int successNumb, int numb, User user) {
         System.out.println(String.format("Загаданное число: " + successNumb));
         System.out.println(String.format("Твое число: " + numb));
 
         if (successNumb == numb) {
-            System.out.println("Верно! Ты молодец\n");
+            System.out.println(String.format("Верно, %s! Ты молодец", user.getName()));
             return true;
         }
-        System.out.println("Попробуй ещё раз\n");
+        System.out.println("Попробуй ещё раз");
         return false;
+    }
+
+    public User buildUser() {
+        User user = new User();
+        System.out.println("Введи имя: ");
+        user.setName(sc.nextLine());
+        System.out.println("Введи фамилию: ");
+        user.setSurname(sc.nextLine());
+        System.out.println("Введи возраст: ");
+        user.setAge(Integer.parseInt(sc.nextLine()));
+        System.out.println("Введи рост: ");
+        user.setGrow(Integer.parseInt(sc.nextLine()));
+
+        return user;
     }
 }
