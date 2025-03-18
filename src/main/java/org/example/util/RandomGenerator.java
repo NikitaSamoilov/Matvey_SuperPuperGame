@@ -1,5 +1,7 @@
 package org.example.util;
 
+import org.example.model.Range;
+
 import java.util.Random;
 
 public class RandomGenerator {

@@ -2,10 +2,6 @@ package org.example.model;
 
 import org.example.util.GameHelper;
 import org.example.util.RandomGenerator;
-import org.example.util.Range;
-
-import java.util.Random;
-import java.util.Scanner;
 
 public class Game {
 
