@@ -18,11 +18,6 @@ public class GameHelper {
         return Integer.parseInt(sc.nextLine());
     }
 
-    public String getUserInfo() {
-        System.out.println("Введите имя: ");
-        return sc.nextLine();
-    }
-
     public boolean processNoIntValue() {
         if ("exit".equals(sc.nextLine())) {
             return true;
