@@ -7,9 +7,11 @@ public class Game {
 
     private final GameHelper gameHelper;
     private final GameParameter gameParameter = new GameParameter();
+    private final User user;
 
-    public Game(GameHelper gameHelper) {
+    public Game(GameHelper gameHelper, User user) {
         this.gameHelper = gameHelper;
+        this.user = user;
     }
 
     public void run() {
@@ -25,7 +27,7 @@ public class Game {
 
             int successNumb = range.makeSuccessNumb();
             System.out.println(String.format("Загаданное число: " + successNumb));
-            isSuccess = gameHelper.isInt() ? gameHelper.processIntValue(successNumb, gameHelper.readNumb()) : processRange();
+            isSuccess = gameHelper.isInt() ? gameHelper.processIntValue(successNumb, gameHelper.readNumb(), user) : processRange();
         }
     }
 
