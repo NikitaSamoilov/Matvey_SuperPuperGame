@@ -46,10 +46,22 @@ public class GameHelper {
         System.out.println("Введи фамилию: ");
         user.setSurname(sc.nextLine());
         System.out.println("Введи возраст: ");
-        user.setAge(Integer.parseInt(sc.nextLine()));
+
+        boolean isSusscessAge = false;
+
+        while (!isSusscessAge) {
+            if (isInt()) {
+                user.setAge(Integer.parseInt(sc.nextLine()));
+                isSusscessAge = true;
+            } else {
+                System.out.println("Так не пойдет! Введи возраст: ");
+            }
+        }
         System.out.println("Введи рост: ");
         user.setGrow(Integer.parseInt(sc.nextLine()));
 
         return user;
     }
+
+
 }
