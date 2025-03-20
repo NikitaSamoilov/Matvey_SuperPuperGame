@@ -22,9 +22,9 @@ public class GameHelper {
     public boolean processNoIntValue() {
         if ("exit".equals(sc.nextLine())) {
             return true;
-        }
+        } else {
         System.out.println("Ты чего творишь, нормально же общались - введи число!");
-        return false;
+        return false; }
     }
 
     public boolean processIntValue(int successNumb, int numb, User user) {
@@ -47,21 +47,27 @@ public class GameHelper {
         user.setSurname(sc.nextLine());
         System.out.println("Введи возраст: ");
 
-        boolean isSusscessAge = false;
+        boolean isSuccessAge = false;
 
-        while (!isSusscessAge) {
+        while (!isSuccessAge) {
             if (isInt()) {
                 user.setAge(Integer.parseInt(sc.nextLine()));
-                isSusscessAge = true;
+                isSuccessAge = true;
             } else {
-                System.out.println("Так не пойдет! Введи возраст: ");
+                System.out.println("Введи число: ");
+                isSuccessAge = isInt() ? isInt() : processNoIntValue();
             }
         }
-        System.out.println("Введи рост: ");
-        user.setGrow(Integer.parseInt(sc.nextLine()));
+        boolean isSuccessGrow = false;
 
+        while (!isSuccessGrow) {
+            if (isInt()) {
+                user.setGrow(Integer.parseInt(sc.nextLine()));
+                isSuccessGrow = true;
+            } else {
+                getClass().desiredAssertionStatus();
+            }
+        }
         return user;
     }
-
-
 }
